@@ -1,8 +1,10 @@
 import React from "react";
-import './cartStyle.css'
+import "./cartStyle.css";
 import { Container, Typography, Button, Grid } from "@mui/material";
+import CartItem from "./CartItem/CartItem";
+
 const Cart = ({ cart }) => {
-  const isEmpty = !cart.line_items;
+
 
   const EmptyCart = () => {
     <Typography variant="subtitle1">
@@ -10,14 +12,15 @@ const Cart = ({ cart }) => {
     </Typography>;
   };
 
-  const FilledCart = () => {
+  const FilledCart = () => (
     <>
       <Grid container spacing={3}>
         {cart.line_items.map((item) => (
           <Grid item xs={12} sm={4} key={item.id}>
-            <div>{item.name}</div>
+            <CartItem item = {item}/>
           </Grid>
-        ))}
+        ))
+        }
       </Grid>
       <div className="cardDetails">
         <Typography variant="h4">
@@ -44,16 +47,18 @@ const Cart = ({ cart }) => {
           </Button>
         </div>
       </div>
-    </>;
-  };
+    </>
+  );
+
+  if (!cart.line_items) return "loading ...";
 
   return (
-    <Container>
+    <Container className="root">
       <div className="toolbar" />
       <Typography className="title" variant="h3">
         Your Shopping cart
       </Typography>
-      {isEmpty ? <EmptyCart /> : <FilledCart />}
+      {!cart.line_items ? <EmptyCart /> : <FilledCart />}
     </Container>
   );
 };

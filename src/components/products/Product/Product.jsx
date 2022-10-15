@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { AddShoppingCart } from "@mui/icons-material";
 import "./styles.css";
-import img from "../../../assets/mac.jpg";
 const Product = ({ product, onAddToCart }) => {
   return (
     <Card className="root">
