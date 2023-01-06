@@ -14,6 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ### ` npx json-server --watch src/data/card_data.json --port 8000 `
 The following HTTP endpoints are created automatically by JSON server:
 
-GET    /employees
-GET    /employees/{id}
-
+GET    /cards
+GET    /cards/{id}
+http://localhost:8000/cards
