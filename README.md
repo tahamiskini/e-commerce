@@ -10,10 +10,4 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-## To create demo rest json webservice with json server:
-### ` npx json-server --watch src/data/card_data.json --port 8000 `
-The following HTTP endpoints are created automatically by JSON server:
 
-GET    /cards
-GET    /cards/{id}
-http://localhost:8000/cards
